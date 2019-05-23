@@ -1,0 +1,16 @@
+{
+  "name": "riddle-me-this",
+  "version": "1.0.0",
+  "description": "riddle app in angular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "debugon": "nodemon index"
+  },
+  "author": "H Olcot",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^1.19.0"
+  }
+}

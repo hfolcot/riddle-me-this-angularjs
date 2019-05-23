@@ -1,0 +1,143 @@
+/****************************************************************************Fonts*/
+
+@import url('https://fonts.googleapis.com/css?family=BioRhyme+Expanded');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+/*****************************************Main*/
+
+body {
+    background-image: url("../images/bg.jpg");
+    background-repeat: repeat;
+    background-size: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+}
+
+.quizbg { /*Applied to both header and footer in HTML*/
+    background-image: url("../images/qmarkbg.png");
+}
+
+.header {
+    display: flex;
+    opacity: 0.75;
+    height: 15vh;
+    font-family: 'BioRhyme Expanded', serif;
+}
+
+.header h1 {
+    margin: auto;
+    align-self: center;
+    color: #4C5760;
+    font-size: 45px;
+    background-color: #D5DAD9;
+}
+
+
+.main-section {
+    min-height: 100vh;
+    background-color: white;
+    opacity: 0.75;
+}
+
+.footer {
+    opacity: 0.75;
+}
+
+.ftext {
+    background-color: #D5DAD9;
+    margin-top: 5px;
+}
+
+.text-centered {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/***************************************Home Page*/
+.welcome {
+    color: #F7C4A5;
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+
+.instructions {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.error {
+    color: red;
+}
+
+/****************************************Game Page*/
+
+
+.info {
+    font-size: 14px;
+}
+
+.goodinfo {
+    background-color: #A9E190;
+}
+
+.badinfo {
+    background-color: #F2806A;
+}
+
+.logout {
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 12px;
+    
+}
+
+
+/****************************************High Scores*/
+
+.high-scores {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 15px;
+}
+
+
+/****************************************Buttons*/
+.btn-primary {
+    background-color: #2F6690;
+    border-color: #2F6690;
+}
+
+.play-btn {
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: #678FAE;
+    border-color: #678FAE;
+    box-shadow: none;
+}
+
+/***********************************Media Queries*/
+
+@media (max-width: 767px) {
+    .header h1 {
+        font-size: 20px;
+    }
+    .header {
+        height: 10vh;
+    }
+    .instructions {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+    .high-scores {
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+}
