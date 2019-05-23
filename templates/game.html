@@ -1,0 +1,37 @@
+<!--Question-->
+
+<div class="question text-centered" ng-controller="gameCtrl">
+    <h4 class="welcome">Good luck <span ng-bind="name"></span>!</h4>
+    <h5 class="question-no">Question {{ qnumber }}:</h5>
+    <p>{{ question }}</p>
+</div>
+
+
+<!--Answer Form-->
+
+<form class="text-centered" method="POST">
+    <div class="form-group">
+        <label for="answer">Answer:</label>
+        <input type="text" id="answer" name="answer">
+        <button type="submit" name="action" value="go" class="btn btn-primary">Go!</button><br>
+        <button type="submit" name="action" value="skip" class="btn btn-light">Skip this question ></button><br>
+
+    </div>
+</form>
+
+
+<hr class="featurette-divider">
+<form method="POST">
+    <div class="form-group text-right">
+        <a href="/" class="btn btn-light logout"><i class="fas fa-sign-out-alt"></i>  End game</a>
+    </div>
+</form>
+
+<!--Div to hold incorrect guesses-->
+
+<!-- <div class="col-xs-6 md-offset-3 incorrect-answers text-centered">
+    <h4>Incorrect Guesses:</h4>
+    {% if error %} {% for error in error %}
+    <p>{{ error }}</p>
+    {% endfor %} {% endif %}
+</div> -->
