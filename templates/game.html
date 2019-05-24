@@ -1,37 +1,99 @@
-<!--Question-->
+<div ng-controller="gameCtrl">
+    <div ng-show="!game">
+        <h3 class="text-centered welcome">Welcome!</h3>
 
-<div class="question text-centered" ng-controller="gameCtrl">
-    <h4 class="welcome">Good luck <span ng-bind="name"></span>!</h4>
-    <h5 class="question-no">Question {{ qnumber }}:</h5>
-    <p>{{ question }}</p>
+        <!--Username form-->
+
+        <form class="text-centered" method="POST">
+            <!--Input form for username-->
+            <div class="form-group">
+                <label for="username"><strong>Please enter a username:</strong></label>
+                <input type="text" ng-model="uname" required><br>
+                <button type="button" ng-click="getQ(1)" class="btn btn-primary play-btn">Play</button>
+            </div>
+        </form>
+
+        <!--Game Instructions-->
+
+        <section class="container">
+            <div class="row">
+                <div class="col-xs-6 instructions">
+                    <p>Welcome to Riddle me THIS!</p>
+                    <ul>
+                        <li>You are about to be asked twenty lateral thinking questions.</li>
+                        <li>All the questions have a single word answer.</li>
+                        <li>You have as many chances as you like to answer each question.</li>
+                        <li>Enter your username above and click Play to continue.</li>
+                    </ul> 
+                </div>
+            </div>
+        </section>
+
+
+        <hr class="featurette-divider">
+
+
+        
+    </div>
+
+
+<!--Question-->
+    <div ng-show="game">
+        <div class="question text-centered">
+            <h4 class="welcome">Good luck {{ uname }}!</h4>
+            <h5 class="question-no">Question {{ qnumber }}:</h5>
+            <p>{{ question }}</p>
+
+
+
+        <!--Answer Form-->
+
+        <form class="text-centered">
+            <div class="form-group">
+                <label for="answer">Answer:</label>
+                <input type="text" id="answer" name="answer">
+                <button type="button" ng-click="getQ({{nextnum}})" class="btn btn-primary">Go!</button><br>
+                <button type="submit" value="skip" class="btn btn-light">Skip this question ></button><br>
+
+            </div>
+        </form>
+        </div>
+
+        <hr class="featurette-divider">
+        <form method="POST">
+            <div class="form-group text-right">
+                <a href="/" class="btn btn-light logout"><i class="fas fa-sign-out-alt"></i>  End game</a>
+            </div>
+        </form>
+
+        <!--Div to hold incorrect guesses-->
+
+        <!-- <div class="col-xs-6 md-offset-3 incorrect-answers text-centered">
+            <h4>Incorrect Guesses:</h4>
+            {% if error %} {% for error in error %}
+            <p>{{ error }}</p>
+            {% endfor %} {% endif %}
+        </div> -->
+    </div>
 </div>
 
-
-<!--Answer Form-->
-
-<form class="text-centered" method="POST">
-    <div class="form-group">
-        <label for="answer">Answer:</label>
-        <input type="text" id="answer" name="answer">
-        <button type="submit" name="action" value="go" class="btn btn-primary">Go!</button><br>
-        <button type="submit" name="action" value="skip" class="btn btn-light">Skip this question ></button><br>
-
+<!--High Score Table-->
+<aside class="text-centered high-scores">
+    <div ng-controller="scoreCtrl">
+        <h4>High Scores</h4>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tr ng-repeat="x in scores">
+                <td>{{ x.name }}</td>
+                <td>{{ x.date }}</td>
+                <td>{{ x.score }}</td>
+            </tr>
+        </table>
     </div>
-</form>
-
-
-<hr class="featurette-divider">
-<form method="POST">
-    <div class="form-group text-right">
-        <a href="/" class="btn btn-light logout"><i class="fas fa-sign-out-alt"></i>  End game</a>
-    </div>
-</form>
-
-<!--Div to hold incorrect guesses-->
-
-<!-- <div class="col-xs-6 md-offset-3 incorrect-answers text-centered">
-    <h4>Incorrect Guesses:</h4>
-    {% if error %} {% for error in error %}
-    <p>{{ error }}</p>
-    {% endfor %} {% endif %}
-</div> -->
+</aside>
