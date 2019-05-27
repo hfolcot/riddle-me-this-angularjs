@@ -8,7 +8,7 @@
             <!--Input form for username-->
             <div class="form-group">
                 <label for="username"><strong>Please enter a username:</strong></label>
-                <input type="text" ng-model="uname" required><br>
+                <input type="text" ng-model="uname"><br>
                 <button type="button" ng-click="getQ(1, skip=true)" class="btn btn-primary play-btn">Play</button>
             </div>
         </form>
@@ -41,7 +41,10 @@
     <div ng-show="game">
         <div class="question text-centered">
             <h4 class="welcome">Good luck {{ uname }}!</h4>
-            <p class="info"><br>Your score: {{ uscore }}</p>
+            <p class="info">
+                <span class="badinfo" ng-show="!correct && nextnum!=2">Incorrect!<br></span>
+                <span class="goodinfo" ng-show="correct">Correct!<br></span>
+            Your score: {{ uscore }}</p>
             <h5 class="question-no">Question {{ qnumber }}:</h5>
             <p>{{ question }}</p>
 

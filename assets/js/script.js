@@ -26,9 +26,12 @@ app.controller('gameCtrl', function($scope, $http) {
  		if (!skip) {
  			console.log("checking answer");
  			if ($scope.uanswer.toLowerCase() == $scope.answer) {
-			console.log("correct");
+			$scope.correct = true;
 			$scope.uscore++;
 			console.log($scope.uscore);
+			}
+			else {
+				$scope.correct = false;
 			}
  		}
 		$scope.qnumber = num;
