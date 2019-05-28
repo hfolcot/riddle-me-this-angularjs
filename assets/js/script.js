@@ -7,28 +7,26 @@ app.config(function($routeProvider) {
 
 }); 
 
-app.controller('hiScoreCtrl', function($scope, $http) {
- 	$http.get("../data/scores.json")
- 	.then(function(response) {
- 		$scope.scores = response.data;
- 	})
-});
+// app.controller('hiScoreCtrl', function($scope, $http) {
+//  	$http.get("../data/scores.json")
+//  	.then(function(response) {
+//  		$scope.scores = response.data;
+//  	})
+// });
 
 app.controller('gameCtrl', function($scope, $http) {
 	$scope.uscore = 0;
  	$scope.getQ = function(num, skip, restart) {
 		$scope.game = true;
 		if(restart) {
-			console.log("restarting game")
 			$scope.uscore = 0;
 			$scope.finish = false;
+			$scope.qnumber = 1;
 		}
  		if (!skip) {
- 			console.log("checking answer");
  			if ($scope.uanswer.toLowerCase() == $scope.answer) {
 			$scope.correct = true;
 			$scope.uscore++;
-			console.log($scope.uscore);
 			}
 			else {
 				$scope.correct = false;
