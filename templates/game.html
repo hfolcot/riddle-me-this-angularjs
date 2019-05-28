@@ -22,7 +22,6 @@
                     <ul>
                         <li>You are about to be asked twenty lateral thinking questions.</li>
                         <li>All the questions have a single word answer.</li>
-                        <li>You have as many chances as you like to answer each question.</li>
                         <li>Enter your username above and click Play to continue.</li>
                     </ul> 
                 </div>
@@ -110,7 +109,7 @@
                     <th>Score</th>
                 </tr>
             </thead>
-            <tr ng-repeat="x in scores">
+            <tr ng-repeat="x in scores | orderBy: '-score'">
                 <td>{{ x.name }}</td>
                 <td>{{ x.date }}</td>
                 <td>{{ x.score }}</td>
